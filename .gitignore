@@ -1,0 +1,62 @@
+# Node.js dependencies
+node_modules/
+
+# Environment variables
+.env
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build output
+dist/
+build/
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# IDE files
+.idea/
+.vscode/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# React Native
+*.hmap
+*.keystore
+*.jks
+
+# Expo
+.expo/
+.expo-shared/
+
+# Android
+*.apk
+*.aab
+*.gradle
+local.properties
+
+# iOS
+*.xcuserstate
+*.xcworkspace
+*.xcuserdata/
+*.xcscheme
+*.xcodeproj
+
+# Debugger
+*.vscode/
+
+# Miscellaneous
+*.swp
+*.swo
