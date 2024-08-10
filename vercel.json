@@ -12,21 +12,13 @@
       "dest": "/index.js"
     },
     {
-      "src": "/static/(.*)",
-      "dest": "/static/$1"
-    },
-    {
       "src": "/(.*)",
-      "dest": "/index.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/404.html"
+      "dest": "/"
     }
   ],
   "functions": {
     "index.js": {
-      "maxDuration": 30 
+      "maxDuration": 30
     }
   }
 }
