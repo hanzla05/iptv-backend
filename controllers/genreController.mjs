@@ -2,9 +2,9 @@ import Genre from '../models/genreModel.mjs';
 
 export const createGenre = async (req, res) => {
   try {
-    const { name } = req.body;
+    const { name,description } = req.body;
 
-    const genre = new Genre({ name });
+    const genre = new Genre({ name ,description});
     await genre.save();
 
     res.status(201).json(genre);
