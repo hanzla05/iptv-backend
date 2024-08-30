@@ -1,9 +1,25 @@
 import File from '../models/fileModel.mjs';
 import fs from 'fs';
+import multer from 'multer';
 import path from 'path';
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads/'); // Specify the directory to save files
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + path.extname(file.originalname)); // Append a timestamp to file name
+  }
+});
+
+const upload = multer({ storage: storage });
 
 export const uploadFile = async (req, res) => {
   try {
+    if (!req.file) {
+      return res.status(400).json({ error: 'No file uploaded' });
+    }
+
     const { originalname, filename, mimetype, path: filePath, size } = req.file;
 
     const file = new File({
@@ -18,9 +34,12 @@ export const uploadFile = async (req, res) => {
 
     res.status(201).json(file);
   } catch (err) {
+    console.error(err); // Log error for debugging
     res.status(500).json({ error: 'Server error' });
   }
 };
+
+
 
 export const getFileById = async (req, res) => {
   try {
