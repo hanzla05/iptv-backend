@@ -46,4 +46,3 @@ export default router;
 
 app.use(bodyparser.urlencoded([{ extended: true }]));
 app.use("/public", express.static("public"))
-connectDB();
