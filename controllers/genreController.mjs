@@ -2,14 +2,15 @@ import Genre from '../models/genreModel.mjs';
 
 export const createGenre = async (req, res) => {
   try {
-    const { name,description } = req.body;
+    const { name } = req.body;
 
-    const genre = new Genre({ name ,description});
+    const genre = new Genre({ name});
     await genre.save();
 
     res.status(201).json(genre);
   } catch (err) {
-    res.status(500).json({ error: 'Server error' });
+    console.log(err,'errorrrr')
+    res.status(500).json({ error: 'Server error',err });
   }
 };
 
